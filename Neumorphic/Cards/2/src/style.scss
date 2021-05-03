@@ -1,0 +1,151 @@
+:root {
+    --primary-bg-color: #bfbfbf;
+    --primary-button-color: #bfbfbf;
+    --card-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3), -8px -8px 12px 0 rgba(0, 0, 0, .25);
+    --button-shadow: 6px 6px 8px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(0, 0, 0, .25);
+    --switch-shadow: 3px 3px 4px rgba(255, 255, 255, 0.3), -3px -3px 4px rgba(0, 0, 0, .25);
+    --button-font-color: #474747;
+    --profile-font-color: #474747;
+}
+
+[data-theme="dark"] {
+    --primary-bg-color: #2d3034;
+    --primary-button-color: #41cee0;
+    --card-shadow: -6px -6px 8px 0 #333a44, 6px 6px 8px 0 rgba(0, 0, 0, .25);
+    --button-shadow: -6px -6px 8px 0 #333a44, 6px 6px 8px 0 rgba(0, 0, 0, .25);
+    --switch-shadow: -6px -6px 8px 0 #333a44, 6px 6px 8px 0 rgba(0, 0, 0, .25);
+    --profile-font-color: #d7f6f9;
+}
+
+body {
+    transition: background-color ease-in 0.5s;
+  background-color: var(--primary-bg-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 20px;
+    background-color: var(--primary-bg-color);
+    border-radius: 20px;
+    box-shadow: var(--switch-shadow);
+    transition: all ease-in-out 0.4s;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+    top: -4px;
+    left: 0;
+    transition: all ease-in-out 0.4s;
+}
+
+.checkbox:checked + .switch::after {
+    left: 42px;
+}
+
+.checkbox:checked + .switch {
+    background-color: #41cee0;
+}
+
+.checkbox {
+    display: none;
+}
+
+.neumorphic-card {
+  height: 300px;
+  width: 250px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: box-shadow ease-in-out 0.4s;
+  box-shadow: var(--card-shadow);
+  
+  .profile-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+      
+      .close-button {
+          position: relative;
+          top: 5px;
+          align-self: end;
+      }
+
+    .neumorphic-card-photo {
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      transition: box-shadow ease-in-out 0.4s;
+      box-shadow: var(--button-shadow); 
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      height: 75px;
+      width: 75px;
+    }
+    
+    .profile-meta {
+      span {
+        display: block;
+        transition: all ease-in-out 0.4s;
+      }
+      
+      .profile-name {
+        margin-top: 1.5em;
+        color: var(--profile-font-color);
+        font-weight: bold;
+        font-size: larger;
+      }
+      
+      .profile-title {
+        color: var(--profile-font-color);
+        font-size: small;
+        font-weight: lighter;
+      }
+    }
+    
+    .profile-buttons {
+      margin-top: 1.5em;
+      
+      .neumorphic-button {
+        border-radius: 40px;
+        border: none;
+        height: 40px;
+        width: 100px;
+        margin: 5px;
+        cursor: pointer;
+        color: var(--button-font-color);
+        font-weight: bolder;
+        background-color: var(--primary-button-color);
+        transition: all ease-in-out 0.4s;
+        box-shadow: var(--button-shadow);
+        outline: none;
+          
+          &:active {
+              transition: box-shadow ease-in-out 0.1s;
+              box-shadow: none !important;
+          }
+      }
+    }
+  }
+}

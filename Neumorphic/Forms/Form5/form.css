@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.form {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  margin: 50px auto;
+  background-color: #f2f3f7;
+  padding: 80px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__title {
+  margin: 20px 0;
+  color: #0c152e;
+  font-size: 24px;
+}
+
+.form__label {
+  width: 100%;
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  margin-bottom: 12px;
+  background: #f2f3f7;
+  box-shadow: inset -5px -5px 30px #ffffff,
+    inset 4px 4px 8px rgba(190, 205, 226, 0.5);
+  border-radius: 4px;
+  padding-left: 56px;
+  color: #8c94a0;
+  font-size: 12px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+}
+
+.form__input--user {
+  background-image: url("https://maxgraph.ru/help-images/mdi_perm_identity.svg");
+}
+
+.form__input--password {
+  background-image: url("https://maxgraph.ru/help-images/mdi_lock.svg");
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.pass-btn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #f2f3f7;
+  box-shadow: -6px -6px 16px #ffffff, 6px 6px 16px #becde2;
+  border-radius: 4px;
+  background-image: url("https://maxgraph.ru/help-images/mdi_remove_red_eye.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form__btn {
+  width: 100%;
+  height: 60px;
+  margin-top: 24px;
+  border: none;
+  cursor: pointer;
+  background: #4070f4;
+  box-shadow: 0px 0px 15px rgba(64, 112, 244, 0.5);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  color: #3df0f4;
+}
+
+.form__account {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  width: calc(100% - (48px * 2));
+  height: 60px;
+  border: none;
+  background: #edf0f4;
+  box-shadow: -6px -6px 16px #ffffff, 6px 6px 16px #becde2;
+  border-radius: 4px;
+  color: #456078;
+  font-size: 12px;
+  cursor: pointer;
+}

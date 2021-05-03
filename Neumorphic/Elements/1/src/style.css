@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,900&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --lightmodetext: #8a92a5;
+  --lightmodegrey: #ebecf0;
+  --lightmodegrey2: #e6e7ec;
+  --lightmodegrey3: #e3e4e9;
+  --darkgrey: #8a92a5;
+  --lightgrey: #ebecf0;
+  --lightgrey2: #e6e7ec;
+  --lightgrey3: #e3e4e9;
+  --brightblue: #1758f1;
+  --darkblue: #0732bf;
+  --brightred: #ef1717;
+  --darkred: #bf0b0b;
+  --brightyellow: #ffd100;
+  --darkyellow: #e0bb00;
+  --brightgreen: #4ee51b;
+  --darkgreen: #42c916;
+  --brightpink: #ef17a4;
+  --darkpink: #ce0e88;
+  --brightpurple: #9517ef;
+  --darkpurple: #720bbc;
+  --sansfam: 'Nunito', sans-serif;
+}
+body {
+  padding: 50px;
+  background: var(--lightgrey);
+  transition: all 0.6s ease;
+}
+body.darkmode {
+  background: #040621;
+}
+.accentpicker {
+  height: 194px;
+  width: 24px;
+  position: absolute;
+  top: 40px;
+  right: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.accentpicker i {
+  border: 6px solid var(--lightgrey);
+  box-shadow: -3px -3px 4px rgba(255,255,255,1), -1px -1px 0 rgba(255,255,255,1), 2px 2px 4px rgba(0,0,0,0.2);
+}
+.accentpicker i.selected {
+  box-shadow: 3px 3px 4px rgba(255,255,255,1), 1px 1px 0 rgba(255,255,255,1), -2px -2px 4px rgba(0,0,0,0.2);
+}
+.accentpicker .blue {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightblue);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accentpicker .yellow {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightyellow);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accentpicker .red {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightred);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accentpicker .green {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightgreen);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accentpicker .purple {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightpurple);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.accentpicker .pink {
+  height: 24px;
+  width: 24px;
+  margin: 5px 0;
+  background: var(--brightpink);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+
+.flexcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.breakflex {
+  width: 100%;
+  height: 50px;
+}
+
+/** Radio Styles **/
+.radiogroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.radiogroup label {
+  font-family: var(--sansfam);
+  font-size: 16px;
+  font-weight: 600;
+  flex-basis: 100%;
+  margin: 0 0 10px 25px;
+  color: var(--darkgrey);
+}
+.radiowrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(310deg, var(--lightgrey), var(--lightgrey3));
+  border-radius: 36px;
+  margin: 20px;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.15), -3px -3px 6px rgba(255,255,255,0.7), inset 1px 1px 0 rgba(255,255,255,1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.radiowrapper::before {
+  display: block;
+  height: 13px;
+  width: 13px;
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-radius: 13px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.blueaccent .radiowrapper::before {
+  border: 2px solid var(--darkblue);
+}
+.redaccent .radiowrapper::before {
+  border: 2px solid var(--darkred);
+}
+.yellowaccent .radiowrapper::before {
+  border: 2px solid var(--darkyellow);
+}
+.greenaccent .radiowrapper::before {
+  border: 2px solid var(--darkgreen);
+}
+.purpleaccent .radiowrapper::before {
+  border: 2px solid var(--darkpurple);
+}
+.pinkaccent .radiowrapper::before {
+  border: 2px solid var(--darkpink);
+}
+.radiowrapper.checked {
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.2), 1px 1px 0 rgba(255,255,255,1);
+}
+
+.blueaccent .radiowrapper.checked::before {
+  background: var(--darkblue);
+}
+.redaccent .radiowrapper.checked::before {
+  background: var(--darkred);
+}
+.yellowaccent .radiowrapper.checked::before {
+  background: var(--darkyellow);
+}
+.greenaccent .radiowrapper.checked::before {
+  background: var(--darkgreen);
+}
+.purpleaccent .radiowrapper.checked::before {
+  background: var(--darkpurple);
+}
+.pinkaccent .radiowrapper.checked::before {
+  background: var(--darkpink);
+}
+.radiowrapper input {
+  display: none;
+}
+
+/** Button Styles **/
+.buttongroup {
+  display: flex;
+  flex-direction: row;
+}
+.neubtn {
+  display: block;
+  height: 60px;
+  background: var(--lightgrey);
+  border-radius: 60px;
+  padding: 0 50px;
+  margin: 0 40px;
+  line-height: 60px;
+  text-align: center;
+  color: var(--darkgrey);
+  text-decoration: none;
+  font-size: 21px;
+  font-family: var(--sansfam);
+  transition: all 0.2s ease;
+}
+.hiddenbtn:hover {
+  background: linear-gradient(135deg, var(--lightgrey), var(--lightgrey2));
+  box-shadow: 8px 8px 16px rgba(0,0,0,0.15), inset 1px 1px 0 rgba(255,255,255,1), -4px -4px 8px rgba(255,255,255,0.6);
+}
+.plainbtn {
+  background: linear-gradient(135deg, var(--lightgrey), var(--lightgrey2));
+  background-size: 400%;
+  box-shadow: 8px 8px 16px rgba(0,0,0,0.15), inset 1px 1px 0 rgba(255,255,255,1), -4px -4px 8px rgba(255,255,255,0.6);
+}
+.neubtn.pressed {
+  box-shadow: -2px -2px 2px rgba(0,0,0,0.15), inset -1px -1px 0 rgba(255,255,255,1), 1px 1px 2px rgba(255,255,255,0.6);
+}
+
+/** Toggle/Checkbox Styles **/
+.togglegroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.togglegroup label {
+  font-family: var(--sansfam);
+  font-size: 16px;
+  font-weight: 600;
+  flex-basis: 100%;
+  margin: 0 0 10px 25px;
+  color: var(--darkgrey);
+}
+.blueaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkblue) 0%, var(--brightblue) 49%, var(--brightblue) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.redaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkred) 0%, var(--brightred) 49%, var(--brightred) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.yellowaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkyellow) 0%, var(--brightyellow) 49%, var(--brightyellow) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.greenaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkgreen) 0%, var(--brightgreen) 49%, var(--brightgreen) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.purpleaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkpurple) 0%, var(--brightpurple) 49%, var(--brightpurple) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.pinkaccent .checkboxwrapper {
+    background-image: linear-gradient(to right, var(--darkpink) 0%, var(--brightpink) 49%, var(--brightpink) 50%, var(--lightgrey) 51%, var(--lightgrey) 100%);
+}
+.checkboxwrapper {
+  width: 64px;
+  height: 32px;
+  margin: 20px;
+  border-radius: 32px;
+  box-shadow: 10px 4px 12px rgba(0,0,0,0.15), -7px -7px 14px rgba(255,255,255,1), inset 1px 1px 0 rgba(255,255,255,1);
+  position: relative;
+  cursor: pointer;
+  background-size: 400%;
+}
+.checkboxwrapper:not(.selected) {
+  background-position: 58% 0%;
+  transition: all 0.15s ease;
+}
+.checkboxwrapper.selected {
+  background-position: 0 0;
+  transition: all 1s ease;
+}
+.checkboxwrapper input {
+  display: none;
+}
+.checkboxwrapper::after {
+  display: block;
+  content: '';
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  background: #f0f0f0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2), -2px -2px 4px rgba(255,255,255,1), inset 1px 1px 0 rgba(255,255,255,1);
+}
+.checkboxwrapper::after {
+  transition: all 0.3s ease;
+}
+.checkboxwrapper.selected {
+  box-shadow: 10px 4px 12px rgba(0,0,0,0.15), -5px -5px 10px rgba(255,255,255,1), -1px -1px 0 rgba(255,255,255,1), inset 3px 3px 3px rgba(0,0,0,0.15), 1px 1px 0 rgba(255,255,255,1);
+}
+.checkboxwrapper.selected::after {
+  transform: translateX(32px);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2), -2px -2px 4px rgba(255,255,255,0.3), inset 1px 1px 0 rgba(255,255,255,1);
+}
+
+
+/** Text Input Styles **/
+.inputgroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 50%;
+  padding: 50px;
+  justify-content: space-evenly;
+}
+.inputgroup input[type="text"] {
+  width: 300px;
+  height: 48px;
+  border-radius: 48px;
+  background: linear-gradient(270deg, var(--lightgrey), var(--lightgrey2));
+  border: 0 none;
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2), inset -3px -3px 6px rgba(255,255,255,0.9);
+  outline: none;
+  padding-left: 20px;
+  color: var(--darkgrey);
+  font-size: 18px;
+}
+input[type="text"]::placeholder {
+  color: var(--darkgrey);
+}
+.inputgroup input[type="text"]::selection {
+  background: var(--brightblue);
+  color: var(--lightblue);
+}
+.searchwrapper {
+  width: 300px;
+  height: 48px;
+  position: relative;
+}
+.searchwrapper input {
+  padding-left: 48px !important;
+}
+.searchwrapper input::focus {
+  linear-gradient(135deg, var(--lightgrey), var(--lightgrey2));
+}
+.searchwrapper input::placeholder {
+  letter-spacing: normal;
+  transform-origin: center left;
+  transition: all 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+.searchwrapper input:focus::placeholder {
+  letter-spacing: 60px;
+  transform: translateX(300px) scale(2);
+}
+.searchwrapper i {
+  display: block;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: var(--darkgrey);
+}
+
+.bargroup {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.barwrapper {
+  width: 32px;
+  height: 200px;
+  border-radius: 32px;
+  background: var(--lightgrey);
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2), inset -3px -3px 6px rgba(255,255,255,0.9);
+  position: relative;
+}
+.barwrapper::before {
+  content: '';
+  display: block;
+  width: 32px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 32px;
+  background: linear-gradient(to top, var(--darkblue) 25%, var(--brightblue));
+}
+.blueaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkblue) 25%, var(--brightblue));
+}
+.redaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkred) 25%, var(--brightred));
+}
+.yellowaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkyellow) 25%, var(--brightyellow));
+}
+.greenaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkgreen) 25%, var(--brightgreen));
+}
+.pinkaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkpink) 25%, var(--brightpink));
+}
+.purpleaccent .barwrapper::before {
+  background: linear-gradient(to top, var(--darkpurple) 25%, var(--brightpurple));
+}
+.barwrapper:nth-of-type(1)::before {
+  height: 80px;
+}
+.barwrapper:nth-of-type(2)::before {
+  height: 160px;
+}
+.barwrapper:nth-of-type(3)::before {
+  height: 100px;
+}
+.barwrapper:nth-of-type(4)::before {
+  height: 40px;
+}
+.barwrapper:nth-of-type(5)::before {
+  height: 190px;
+}
+
+
+/** Slider Styles **/
+.sliderwrapper {
+  position: relative;
+  margin-left: 50px;
+}
+.rangeslider {
+  width: 500px;
+  height: 16px;
+  border-radius: 16px;
+  position: relative;
+  background: linear-gradient(to bottom right, var(--lightgrey), var(--lightgrey3));
+  box-shadow: -3px -3px 5px rgba(255,255,255,0.7), 4px 4px 6px rgba(0,0,0,0.15), -1px -1px 0 rgba(255,255,255,1);
+}
+.rangeslider__fill {
+  height: 100%;
+  top: 0;
+  border-radius: 16px;
+  box-shadow: inset -1px -1px 1px rgba(0,0,0,0.1);
+  position: absolute;
+}
+.blueaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkblue), var(--brightblue));
+}
+.redaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkred), var(--brightred));
+}
+.yellowaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkyellow), var(--brightyellow));
+}
+.greenaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkgreen), var(--brightgreen));
+}
+.purpleaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkpurple), var(--brightpurple));
+}
+.pinkaccent .rangeslider__fill {
+  background: linear-gradient(to right, var(--darkpink), var(--brightpink));
+}
+.rangeslider__handle {
+  background: linear-gradient(to bottom, var(--lightgrey), var(--lightgrey3));
+  cursor: ew-resize;
+  display: inline-block;
+  width: 10px;
+  height: 36px;
+  position: absolute;
+  top: -10px;
+  border-radius: 8px;
+  box-shadow: -2px -2px 2px rgba(255,255,255,0.5), 2px 2px 2px rgba(0,0,0,0.15), -1px -1px 0 rgba(255,255,255,1);
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
+}
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+  box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}
+.rangeoutput {
+  position: absolute;
+  top: -70px;
+  left: calc(50% - 27px);
+  min-height: 32px;
+  min-width: 32px;
+  border-radius: 16px;
+  padding: 15px;
+  font-family: var(--sansfam);
+  font-size: 18px;
+  color: transparent;
+  text-shadow: -1px -1px 1px rgba(255,255,255,1), 1px 1px 1px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.rangeoutput.visible {
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.15), -3px -3px 5px rgba(255,255,255,0.7), -1px -1px 0 rgba(255,255,255,1);
+  color: #fff;
+  background: #f0f0f0;
+  text-shadow: -1px -1px 1px rgba(255,255,255,1), 1px 1px 1px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  background-color: #dddddd;
+  margin-top: 12rem;
+}
+
+.neu { 
+  cursor: pointer;
+  background: #dddddd;
+  color: #999999;
+  border-radius: 24px;
+  box-shadow:  8px 8px 12px #cccccc, 
+              -8px -8px 12px #EBEBEB;
+  transition: box-shadow 0.5s ease, 
+              background 0.5s ease,
+              color 0.5s ease;
+}
+
+.neu:hover {
+  background: #E3E3E3;
+  color: #666666;
+  box-shadow:  12px 12px 24px #bbbbbb, 
+              -12px -12px 24px #F2F2F2;
+}
+
+.neu:active {
+  background: #dddddd;
+  box-shadow: -4px -4px 12px #bbbbbb, 
+              4px 4px 12px #F2F2F2;
+}
+
+
+
+
+.material-icons.sm { font-size: 16px; }
+.material-icons.md { font-size: 24px; }
+.material-icons.lr { font-size: 32px; }
+.material-icons.xl { font-size: 48px; }
